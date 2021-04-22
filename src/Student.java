@@ -1,7 +1,7 @@
 
 public class Student {
 	
-	//Attribute von der Studenten
+	//Studenten Attribute 
 	private String matrikelnummer = " ";
 	private String vorname = " ";
 	private String nachname = " ";

@@ -5,7 +5,9 @@ public class Universitaet {
 	private String name = "Türkisch-Deutsche Universitaet";
 	
 	public Vector Studenten = new Vector();
+	public Vector Dozenten = new Vector();
 	
+	//Studenten
 	public void addStudent (String matrikelnummer, String vorname, String nachname) {	
 		Student stu = new Student(matrikelnummer, vorname, nachname);
 			for(int i =0; i<Studenten.size(); i++) {
@@ -52,4 +54,46 @@ public class Universitaet {
 		}
 
    }
+   
+   //Dozenten
+   public void addDozent (String dozentid, String vorname, String nachname) {	
+	   Dozent doz = new Dozent(dozentid, vorname, nachname);
+		for(int i =0; i<Dozenten.size(); i++) {
+			if((Dozenten.get(i)).equals(doz)) {
+				System.out.println("Es können nicht 2 Dozenten mit derselben ID sein.");
+				return;
+			}
+		}
+		
+		Dozenten.add(doz); 
+	}
+
+	public void printDozenten() {
+		for(int i =0; i<Dozenten.size() ; i++) {
+			System.out.println((Dozenten.get(i)).toString());
+		}
+	}
+
+	public void suchenDozenten(String vorname, String nachname) {
+		for(int i=0; i<Dozenten.size(); i++) {
+		 	if (((Dozent)Dozenten.get(i)).getVorname().equals(vorname) && ((Dozent)Dozenten.get(i)).getNachname().equals(nachname)) {
+				System.out.println((Dozenten.get(i)).toString());
+				return;
+		 	}
+	  	}
+		System.out.println("Der Student wurde nicht gefunden.");
+	}
+	   
+	public void loschenDozenten(String dozentid) {
+	   	for(int i=0; i<Dozenten.size(); i++) {
+			if (((Dozent)Dozenten.get(i)).getDozentid().equals(dozentid)) {
+				Dozent a = new Dozent(dozentid);
+				Dozenten.remove(a);
+				System.out.println("Der Dozent wurde gelöscht.");
+				return;
+			}else {
+				System.out.println("Der Dozent wurde nicht gefunden.");
+			}
+		}
+	}
 }

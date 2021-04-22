@@ -8,7 +8,7 @@ public class main {
 
 	        int operation = 0;
 
-	        while (operation != 16) {
+	        while (operation != 8) {
 
 	        	System.out.println("Welche Operation moechten Sie durchfuehren?");
 	                
@@ -16,12 +16,18 @@ public class main {
 	        	System.out.println("2- Studenten auflisten");
 	        	System.out.println("3- Student suchen");
 	        	System.out.println("4- Student loeschen");
+	        	
+	        	System.out.println("5- Dozent hinzufuegen");
+	        	System.out.println("6- Dozenten auflisten");
+	            System.out.println("7- Dozent suchen");
+	        	System.out.println("8- Dozent loeschen");
 	            
 	        	Scanner scan = new Scanner(System.in);
 	            operation = scan.nextInt();
 	            
 	            switch(operation) {
 	            
+	            	//Student
 	           		case 1: //Student hinzufuegen
 		            	System.out.println("Vorname : ");
 		            	String vorName = scan.next();
@@ -54,6 +60,41 @@ public class main {
 		            	Matrikelnummer = scan.next();
 		            	
 		            	uni.loschenStudenten(Matrikelnummer);
+		            	break;
+		            	
+		            //Dozenten
+		            case 5: //Dozent hinzufuegen
+		            	System.out.println("Vornama : ");
+		             	vorName = scan.next();
+		                   
+		             	System.out.println("Nachname : ");
+		             	nachName =scan.next();
+		                    
+		              	System.out.println("ID : ");
+		            	String dozentId = scan.next();
+		                    
+		             	uni.addDozent(dozentId, vorName, nachName);
+		              	break;
+		                   
+		            case 6: //Dozenten auflisten
+		            	uni.printDozenten();
+		            	break;
+		            	
+		            case 7: //Dozent suchen
+		            	System.out.println("Vorname : ");
+		            	vorName = scan.next();
+		            	
+		            	System.out.println("Nachname :");
+		            	nachName = scan.next();
+		            	
+		            	uni.suchenDozenten(vorName, nachName);
+		                break;
+		                
+		            case 8: ////Dozent loeschen
+		            	System.out.println("Geben Sie die Matrikelnummer des Dozenten ein, den Sie löschen wollen");
+		            	dozentId = scan.next();
+		            	
+		            	uni.loschenDozenten(dozentId);
 		            	break;
 		            	
 	            }
