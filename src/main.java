@@ -21,6 +21,11 @@ public class main {
 	        	System.out.println("6- Dozenten auflisten");
 	            System.out.println("7- Dozent suchen");
 	        	System.out.println("8- Dozent loeschen");
+	        	
+	        	System.out.println("9- LVA hinzufuegen");
+	        	System.out.println("10- LVA auflisten");
+	        	System.out.println("11- LVA suchen");
+		      	System.out.println("12- LVA loeschen");
 	            
 	        	Scanner scan = new Scanner(System.in);
 	            operation = scan.nextInt();
@@ -56,7 +61,7 @@ public class main {
 		                break;
 		         
 		            case 4: //Student loeschen
-		            	System.out.println("Geben Sie die Matrikelnummer des Studenten ein, den Sie löschen wollen");
+		            	System.out.println("Geben Sie die Matrikelnummer des Studenten ein, den Sie löschen wollen :");
 		            	Matrikelnummer = scan.next();
 		            	
 		            	uni.loschenStudenten(Matrikelnummer);
@@ -90,12 +95,42 @@ public class main {
 		            	uni.suchenDozenten(vorName, nachName);
 		                break;
 		                
-		            case 8: ////Dozent loeschen
-		            	System.out.println("Geben Sie die Matrikelnummer des Dozenten ein, den Sie löschen wollen");
+		            case 8: //Dozent loeschen
+		            	System.out.println("Geben Sie die Matrikelnummer des Dozenten ein, den Sie löschen wollen :");
 		            	dozentId = scan.next();
 		            	
 		            	uni.loschenDozenten(dozentId);
 		            	break;
+		            
+		            //LVA
+		            case 9: //LVA hinzufügen
+		            	System.out.println("der Code der Lehrveranstaltung :");
+		            	String code =scan.next();
+		            	
+		            	System.out.println("der Name der Lehrveranstaltung :");
+		            	String Name = scan.next();
+		            	
+		            	uni.addLva(Name,code);
+		            	break;
+		          	  
+		            case 10: //LVAen auflisten
+		            	uni.printLvaen();
+		            	break;
+		            	  
+		            case 11: //LVA suchen
+		            	System.out.println("der Name der Lehrveranstaltung :");
+		            	Name= scan.next();
+		            	
+		            	System.out.println("der Code der Lehrveranstaltung :");
+		            	code = scan.next();
+		            	
+		            	uni.suchenLvaen(Name, code);
+		           	
+		            case 12: //LVA loeschen
+		            	System.out.println("Geben Sie der Code der Lehrveranstaltung ein, den Sie löschen wollen :");
+		            	code = scan.next();
+		            	
+		            	uni.löschenLvaen(code);
 		            	
 	            }
 	       }

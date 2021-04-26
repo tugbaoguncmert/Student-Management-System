@@ -6,6 +6,7 @@ public class Universitaet {
 	
 	public Vector Studenten = new Vector();
 	public Vector Dozenten = new Vector();
+	public Vector lvaen = new Vector();
 	
 	//Studenten
 	public void addStudent (String matrikelnummer, String vorname, String nachname) {	
@@ -96,4 +97,47 @@ public class Universitaet {
 			}
 		}
 	}
+	
+	//LVAen
+	 public void addLva (String derskodu, String name) {	
+		 LVA lva = new LVA (derskodu,name);
+		 for(int i =0; i< lvaen.size(); i++) {
+			if((lvaen.get(i)).equals(lva)) {
+				System.out.println("Es können nicht 2 LVAen mit derselben Code sein."); 
+					return;
+			 }
+		  }
+		 
+		lvaen.add(lva); 
+	 }
+	  
+	 public void printLvaen() {
+		 for(int i =0; i<lvaen.size() ; i++) {
+			System.out.println((lvaen.get(i)).toString());
+		 }
+	 }
+	 /* 
+	 public void suchenLvaen(String name, String derskodu) {
+		 for(int i=0; i<lvaen.size(); i++) {
+		 //ifin içine girmiyor.
+		 	if (((LVA)lvaen.get(i)).getName().equals(name) && ((LVA)lvaen.get(i)).getDerskodu().equals(derskodu)) {
+				System.out.println((lvaen.get(i)).toString());
+				return;
+		    }
+		 }
+		 System.out.println("Die Lehrveranstaltung wurde nicht gefunden.");
+	 }
+	//it doesnt work
+	public void löschenLvaen(String derskodu) {
+		for(int i=0; i<lvaen.size(); i++) {
+			if (((LVA)lvaen.get(i)).getDerskodu().equals(derskodu)) {
+				LVA a = new LVA(derskodu);
+				lvaen.remove(a);
+				System.out.println("Die Lehrveranstaltung wurde gelöscht.");
+				return;
+			}else {
+				System.out.println("Die Lehrveranstaltung wurde nicht gefunden.");
+			}
+		}
+	}*/
 }
