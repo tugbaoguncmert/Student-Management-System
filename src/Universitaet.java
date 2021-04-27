@@ -116,11 +116,12 @@ public class Universitaet {
 			System.out.println((lvaen.get(i)).toString());
 		 }
 	 }
-	 /* 
+	 
 	 public void suchenLvaen(String name, String derskodu) {
 		 for(int i=0; i<lvaen.size(); i++) {
 		 //ifin içine girmiyor.
-		 	if (((LVA)lvaen.get(i)).getName().equals(name) && ((LVA)lvaen.get(i)).getDerskodu().equals(derskodu)) {
+		 	//if (((LVA)lvaen.get(i)).getName().equals(name) && ((LVA)lvaen.get(i)).getDerskodu().equals(derskodu)) {
+		 	if ( ((LVA)lvaen.get(i)).getDerskodu().equals(derskodu)) {
 				System.out.println((lvaen.get(i)).toString());
 				return;
 		    }
@@ -139,5 +140,5 @@ public class Universitaet {
 				System.out.println("Die Lehrveranstaltung wurde nicht gefunden.");
 			}
 		}
-	}*/
+	}
 }

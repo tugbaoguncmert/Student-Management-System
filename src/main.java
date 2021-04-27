@@ -125,13 +125,15 @@ public class main {
 		            	code = scan.next();
 		            	
 		            	uni.suchenLvaen(Name, code);
+		            	break;
 		           	
 		            case 12: //LVA loeschen
 		            	System.out.println("Geben Sie der Code der Lehrveranstaltung ein, den Sie löschen wollen :");
 		            	code = scan.next();
 		            	
 		            	uni.löschenLvaen(code);
-		            	
+		            	break;
+	
 	            }
 	       }
 	}
